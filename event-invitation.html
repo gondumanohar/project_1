@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>College Fest Invitation</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-image: url('college-fest-bg2.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      color: #fff;
+    }
+
+    .invitation-container {
+      background-color: rgba(10, 10, 10, 0.75);
+      padding: 50px;
+      border-radius: 20px;
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #00ffd9;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .event-details {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .event-details p {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+
+    .rsvp-button {
+      padding: 12px 30px;
+      font-size: 1rem;
+      background-color: #00ffd9;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .rsvp-button:hover {
+      background-color: #00ccb3;
+    }
+
+    /* Popup Modal */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .popup-box {
+      background-color: #111;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 400px;
+      width: 90%;
+      text-align: left;
+      box-shadow: 0 0 15px rgba(0, 255, 217, 0.3);
+    }
+
+    .popup-box h2 {
+      color: #00ffd9;
+      margin-bottom: 20px;
+    }
+
+    .popup-box input, .popup-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .popup-box button {
+      background-color: #00ffd9;
+      color: #000;
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: #ccc;
+      font-size: 1.2rem;
+      float: right;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .description {
+        font-size: 1rem;
+      }
+
+      .event-details p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="invitation-container">
+    <h1>TechFusion 2025</h1>
+    <p class="description">
+      Step into a world of innovation, creativity, and celebration! <br>
+      You're invited to the most electrifying college fest of the year.
+    </p>
+
+    <div class="event-details">
+      <p><strong>Date:</strong> July 20, 2025</p>
+      <p><strong>Time:</strong> 10:00 AM - 8:00 PM</p>
+      <p><strong>Venue:</strong> ANITS Campus, Main Auditorium & Open Grounds</p>
+    </div>
+
+    <button class="rsvp-button" onclick="openPopup()">RSVP Now</button>
+  </div>
+
+  <!-- RSVP Popup -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <button class="close-btn" onclick="closePopup()">×</button>
+      <h2>RSVP Now</h2>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="3" placeholder="Any message..."></textarea>
+      <button onclick="submitForm()">Submit</button>
+    </div>
+  </div>
+
+  <script>
+    function openPopup() {
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    function submitForm() {
+      alert("Thanks for your RSVP! See you at the fest 🎉");
+      closePopup();
+    }
+  </script>
+
+</body>
+</html>
